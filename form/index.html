@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upgrade USA Form</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="bar"></div>
+<div class="logo"></div>
+<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div class="divider"></div>
+	<form class="form">
+		<fieldset>
+    <legend class="label">
+      <span class="numbers">1</span> CREDIT CARD INFO
+    </legend>
+  		<input class="input" id="cardNameBox" value="" type="text" placeholder="Please enter name on card" value="">
+  		<input class="input" id="cardNumberBox" value="" type="text" placeholder="Card Number"  value="">
+  		<input class="input" id="expirationBox" value="" type="text" placeholder="MM/YYYY"  value="">
+      <input class="input" id="ccvBox" value="" type="text" placeholder="CCV"  value="">
+		</fieldset>
+		<fieldset>		
+      <legend class="label">
+        <span class="numbers">2</span> BILLING INFO
+      </legend>
+        <input  class="input" id="firstNameBox" value="" type="text" placeholder="First Name"  value="">
+        <input  class="input" id="lastNameBox" value="" type="text" placeholder="Last Name"  value="">
+        <input  class="input" id="address1Box" alue="" type="text" placeholder="Address #1"  value="">
+        <input  class="input" id="address2Box"  value="" type="text" placeholder="Address #2"  value="">
+        <input  class="input" id="cityBox" value="" type="text" placeholder="City"  value="">
+        <input  class="input" id="stateBox" value="" type="text" placeholder="State"  value="">
+        <input  class="input" id="zipCodeBox" value="" type="text" placeholder="Zip Code"  value="">
+        <input  class="input" id="countryBox" value="" type="text" placeholder="Country"  value="">
+        <input  class="input" id="phoneNumberBox" value="" type="text" placeholder="Phone Number"  value="">
+		</fieldset>
+    <fieldset>
+      <button  class="btn" id="cancelBtn" type="cancel">Cancel</button>
+      <button  class="btn" id="saveBtn" type="submit" value="">Save</button>
+    </fieldset>
+	</form>
+<div class="copyright">COPYRIGHT 2017 UPGRADEUSA. ALL RIGHTS RESERVED<br/><br/>
+    3616 FAR WEST BVLD, STE 117-603, AUSTIN, TX 78731<br/>
+  <a href="mailto:info@upgradeusa.com">INFO@UPGRADEUSA.COM</a> <br/>
+  <a href="href="tel:866.989.0003">866.989.0003</a>
+</div>
+<script>
+// example for adding .error class
+   document.onreadystatechange = function () {
+     if (document.readyState == "complete") {
+     // document is ready. Do your stuff here
+
+      const submit  = document.querySelector('#saveBtn');
+      const inputs = document.querySelectorAll('.input');
+
+      submit.addEventListener('click', handleSubmit);
+
+      inputs.forEach(i => {
+        i.addEventListener('focus', clearError);
+      });
+
+      //add remove error class and clear value
+      function clearError(e) {
+
+        this.classList.remove('error')
+        this.value = '';
+      }
+
+      //if input box is returns false value show add error class and message
+      function handleSubmit (e){
+        e.preventDefault();
+        inputs.forEach(input => {
+           if(!input.value){
+            input.value = 'Please fill out this field.';
+            input.classList.add('error');
+           }
+        });
+      }
+    }
+}
+
+
+</script>
+</body>
+</html>
