@@ -49,7 +49,7 @@
    document.onreadystatechange = function () {
      if (document.readyState == "complete") {
      // document is ready. Do your stuff here
-
+      console.log('test')
       const submit  = document.querySelector('#saveBtn');
       const inputs = document.querySelectorAll('.input');
 
@@ -69,6 +69,7 @@
       //if input box is returns false value show add error class and message
       function handleSubmit (e){
         e.preventDefault();
+        console.log('submit')
         inputs.forEach(input => {
            if(!input.value){
             input.value = 'Please fill out this field.';
