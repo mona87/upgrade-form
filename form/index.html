@@ -8,7 +8,11 @@
 <body>
 <div class="bar"></div>
 <div class="logo"></div>
-<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="successMessage">
+  <span class="successText">SUCCESS!</span>
+  <span class="thankYouText">THANK YOUR FOR SUBMITTING YOUR INFO</span>
+</p>
 <div class="divider"></div>
 	<form class="form">
 		<fieldset>
@@ -45,13 +49,17 @@
   <a href="href="tel:866.989.0003">866.989.0003</a>
 </div>
 <script>
-// example for adding .error class
+// example for how form works when submitted
    document.onreadystatechange = function () {
      if (document.readyState == "complete") {
      // document is ready. Do your stuff here
-      console.log('test')
+
       const submit  = document.querySelector('#saveBtn');
       const inputs = document.querySelectorAll('.input');
+      const successMsg =  document.querySelector('.successMessage');
+      const text =  document.querySelector('.text');
+      const form = document.querySelector('.form');
+      const divider = document.querySelector('.divider');
 
       submit.addEventListener('click', handleSubmit);
 
@@ -66,14 +74,21 @@
         this.value = '';
       }
 
-      //if input box is returns false value show add error class and message
+      //if input box is returns false value add the .error class and display success message
       function handleSubmit (e){
         e.preventDefault();
-        console.log('submit')
+ 
         inputs.forEach(input => {
            if(!input.value){
             input.value = 'Please fill out this field.';
             input.classList.add('error');
+           } else{
+            //show success message
+            text.style.display = 'none';
+            //hide everything else
+            successMsg.style.display = 'block';
+            form.style.display = 'none';
+            divider.style.display= 'none';
            }
         });
       }
