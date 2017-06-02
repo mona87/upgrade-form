@@ -1,146 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Upgrade USA Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./styles/normalize.css">
-  <link rel="stylesheet" type="text/css" href="./styles/parsley.css">
-	<link rel="stylesheet" type="text/css" href="./styles/style.css">
-</head>
-<body>
-<div class="bar"></div>
-<div class="logo"></div>
-<p class="text">Unfortunately, we were unable to process the initial lease payment. Please update your credit card information below in our secure form so that UpgradeUSA can attempt the charge again. If you are experiencing any issues or have any questions please email us at <a href="mailto:info@upgradeusa.com">info@upgradeusa.com</a> or call us at <a href="tel:1.866.989.0003">1-866-989-0003</a></p>
-<p class="successMessage">
-  <span class="successText">SUCCESS!</span>
-  <span class="thankYouText">THANK YOUR FOR SUBMITTING YOUR INFO</span>
-</p>
-<div class="divider"></div>
-	<form class="form" data-parsley-validate>
-		<fieldset>
-    <legend class="label">
-      <span class="numbers">1</span> CREDIT CARD INFO
-    </legend>
-  		<input required  class="input  " id="cardNameBox" value="" type="text" placeholder="Please enter name on card" value="">
-      <p class="error-container"></p>
-  		<input required class="input" data-parsley-creditcard="" id="cardNumberBox" value="" type="text" placeholder="Card Number"  value="">
-  		<input required class="input" data-parsley-cardexpiry="" id="expirationBox" value="" type="text" placeholder="MM/YYYY"  value="">
-      <input required class="input" data-parsley-cvv="" id="ccvBox" value="" type="text" placeholder="CCV"  value="">
-		</fieldset>
-		<fieldset>		
-      <legend class="label">
-        <span class="numbers">2</span> BILLING INFO
-      </legend>
-        <input required class="input" id="firstNameBox" value="" type="text" placeholder="First Name"  value="">
-        <input required class="input" id="lastNameBox" value="" type="text" placeholder="Last Name"  value="">
-        <input required class="input" id="address1Box" alue="" type="text" placeholder="Address #1"  value="">
-        <input required class="input" id="address2Box"  value="" type="text" placeholder="Address #2"  value="">
-        <input required class="input" id="cityBox" value="" type="text" placeholder="City"  value="">
-        <input required class="input" id="stateBox" value="" type="text" placeholder="State"  value="">
-        <input required class="input" data-parsley-type="digits" id="zipCodeBox" value="" type="text" placeholder="Zip Code"  value="">
-        <input required class="input" id="countryBox" value="" type="text" placeholder="Country"  value="">
-        <input required class="input" data-parsley-type="digits" id="phoneNumberBox" value="" type="text" placeholder="Phone Number"  value="">
-		</fieldset>
-    <fieldset>
-      <button required class="btn" id="cancelBtn" type="reset">Cancel</button>
-      <button required class="btn" id="saveBtn" type="submit" value="">Submit</button>
-    </fieldset>
-	</form>
-  <footer class="footer">
+  <head>
+    <title>Upgrade USA Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
+    <!--   <link rel="stylesheet" type="text/css" href="./styles/parsley.css"> -->
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  </head>
+  <body>
+    <div class="bar"></div>
+    <div class="logo"></div>
+    <p class="apiError">There was an error submitting your request. Please try again.</p>
+    <p class="errorMessage">Unfortunately, we were unable to process the initial lease payment. Please update your credit card information below in our secure form so that UpgradeUSA can attempt the charge again. If you are experiencing any issues or have any questions please email us at <a href="mailto:info@upgradeusa.com">info@upgradeusa.com</a> or call us at <a href="tel:1.866.989.0003">1-866-989-0003</a>.</p>
+    <p class="successMessage">
+      <span class="successText">SUCCESS!</span>
+      <span class="thankYouText">THANK YOUR FOR SUBMITTING YOUR INFO</span>
+    </p>
+    <div class="divider"></div>
+    <form class="form" data-parsley-validate>
+      <fieldset>
+        <legend class="label">
+          <span class="numbers">1</span> CREDIT CARD INFO
+        </legend>
+        <input required  class="input  " id="cardNameBox" value="" type="tel" placeholder="Please enter name on card" autocomplete="on">
+        <input required class="input" data-parsley-creditcard="" id="cardNumberBox" value="" type="text" placeholder="Card Number" autocomplete="ob">
+        <input required class="input" data-parsley-cardexpiry="" id="expirationBox" value="" type="text" placeholder="MM/YYYY" autocomplete="on">
+        <input required class="input" data-parsley-cvv="" id="ccvBox" value="" type="text" placeholder="CCV">
+      </fieldset>
+      <fieldset>
+        <legend class="label">
+          <span class="numbers">2</span> BILLING INFO
+        </legend>
+        <input required class="input" id="firstNameBox" value="" type="text" placeholder="First Name">
+        <input required class="input" id="lastNameBox" value="" type="text" placeholder="Last Name">
+        <input required class="input" id="address1Box" alue="" type="text" placeholder="Address #1" autocomplete="on">
+        <input  class="input" id="address2Box"  value="" type="text" placeholder="Address #2">
+        <div class="flex">
+          <div>
+            <input required class="input" id="cityBox" value="" type="text" placeholder="City" autocomplete="on">
+            <input required class="input" id="stateBox" value="" type="text" placeholder="State" autocomplete="on">
+            </div>
+            <div>
+              <input required class="input" data-parsley-type="digits" id="zipCodeBox" value="" type="text" placeholder="Zip Code" autocomplete="on">
+              <input required class="input" id="countryBox" value="" type="text" placeholder="Country" autocomplete="ob">
+          </div>
+        </div>
+        <input required class="input" data-parsley-type="digits" id="phoneNumberBox" value="" type="text" placeholder="Phone Number" autocomplete="on">
+      </fieldset>
+      <fieldset>
+        <button required class="btn" id="cancelBtn" type="reset">Cancel</button>
+        <button required class="btn" id="saveBtn" type="submit" value="">Submit</button>
+      </fieldset>
+    </form>
+    <footer class="footer">
+          <!-- (c) 2005, 2017. Authorize.Net is a registered trademark of CyberSource Corporation -->
+      <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="e5ce2169-0cfc-4488-b5d9-9531f2e77154";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank"> Payment Processing</a>
+    </div>
       <div class="copyright">COPYRIGHT 2017 UPGRADEUSA. ALL RIGHTS RESERVED<br/><br/>
-          3616 FAR WEST BVLD, STE 117-603, AUSTIN, TX 78731<br/>
+        3616 FAR WEST BVLD, STE 117-603, AUSTIN, TX 78731<br/>
         <a href="mailto:info@upgradeusa.com">INFO@UPGRADEUSA.COM</a> <br/>
         <a href="tel:866.989.0003">866.989.0003</a>
       </div>
-         <!-- (c) 2005, 2017. Authorize.Net is a registered trademark of CyberSource Corporation --> 
-         <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="e5ce2169-0cfc-4488-b5d9-9531f2e77154";</script> <script type="text/javascript" language="javascript" src="https://verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank"> Payment Processing</a> 
-        </div>
-</footer>
-<script>
+
+  </footer>
+  <script>
   window.ParsleyConfig = {
-    classHandler: function ( elem ) {
-      // specify where parsley error-success classes are set
-      return $(elem).parents(".form-group");
-    },
-    errorsWrapper: '<div class="error"></div>',
-    errorTemplate: '<span></span>' 
-   };
-</script>
-<script
+  classHandler: function ( elem ) {
+  // specify where parsley error-success classes are set
+  return $(elem).parents(".form-group");
+  },
+  errorsWrapper: '<div class="error"></div>',
+  errorTemplate: '<div></div>'
+  };
+  </script>
+  <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
-<script src="./scripts/parsley.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.2/parsley.min.js"></script>
   <script src="./scripts/parsley-payment.js"></script>
-   <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
-<script>
-
-// example for how form works when submitted
-
-$(function() {
-
-    $(".form" ).submit(function(e) {
-      $(this).parsley("validate");
-      if ($(this).parsley("isValid")) {   
-      //show success page    
-
-     sendPaymentDataToAnet();
-        $('.form, .text, .divider').hide();
-        $('.successMessage').show();
-      }
-      e.preventDefault();
-    });
-
-    $('#cancelBtn').on('click', function(e){
-      $('.form').parsley().reset();
-    })
-
-
-
-function sendPaymentDataToAnet() {
-    var secureData = {}; authData = {}; cardData = {};
-
-    // Extract the card number, expiration date, and card code.
-    cardData.cardNumber = document.getElementById("cardNumberID").value;
-    cardData.month = document.getElementById("monthID").value;
-    cardData.year = document.getElementById("yearID").value;
-    cardData.cardCode = document.getElemenetById("cardCodeID").value;
-    secureData.cardData = cardData;
-
-    // The Authorize.Net Client Key is used in place of the traditional Transaction Key. The Transaction Key
-    // is a shared secret and must never be exposed. The Client Key is a public key suitable for use where
-    // someone outside the merchant might see it.
-    authData.clientKey = "69KbDd3rmJAgaG9dT36Y96H638xWGg75pVybZcsMf2rkXE2cx82NqqYjfEwKy8N4";
-    authData.apiLoginID = "6cgDDv8879";
-    secureData.authData = authData;
-
-    // Pass the card number and expiration date to Accept.js for submission to Authorize.Net.
-    Accept.dispatchData(secureData, responseHandler);
-
-    // Process the response from Authorize.Net to retrieve the two elements of the payment nonce.
-    // If the data looks correct, record the OpaqueData to the console and call the transaction processing function.
-    function responseHandler(response) {
-        if (response.messages.resultCode === "Error") {
-            for (var i = 0; i < response.messages.message.length; i++) {
-                console.log(response.messages.message[i].code + ": " + response.messages.message[i].text);
-            }
-            alert("acceptJS library error!")
-        } else {
-            console.log(response.opaqueData.dataDescriptor);
-            console.log(response.opaqueData.dataValue);
-            processTransaction(response.opaqueData);
-        }
-    }
-  }
-
-
-          
-
-});
-
-
-
-</script>
+  <script type="text/javascript" src="https://jstest.authorize.net/v1/Accept.js" charset="utf-8"></script>
+  <script src="./scripts/validate.js"></script>
+  </script>
 </body>
 </html>
